@@ -1720,3 +1720,5 @@ const songsArray = [
     id: 200,
   },
 ];
+
+export default songsArray;
