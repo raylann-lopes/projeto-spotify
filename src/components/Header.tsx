@@ -1,10 +1,13 @@
-import React from "react";
 import LogoSpotify from "../assets/logo/spotify-logo.png";
 
 const Header = () => {
   return (
-    <div>
+    <div className="flex items-center justify-between p-5 h-16 bg-gray-800 text-white">
       <img src={LogoSpotify} alt="LogoSpotify" />
+
+      <a href="#" className=" hover:underline text-3xl">
+        Spotify
+      </a>
     </div>
   );
 };

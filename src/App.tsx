@@ -1,5 +1,5 @@
 import "tailwindcss";
-import Header from "./components/header";
+import Header from "./components/Header";
 
 const App = () => {
   return <Header />;

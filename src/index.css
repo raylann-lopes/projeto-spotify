@@ -1,1 +1,7 @@
 @import "tailwindcss";
+@import "tailwindcss/preflight.css" layer(base);
+
+body {
+  background-color: black;
+  font-family: "Montserrat", sans-serif;
+}
