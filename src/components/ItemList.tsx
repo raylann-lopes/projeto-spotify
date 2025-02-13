@@ -3,9 +3,18 @@ import SingleItem from "./SingleItem";
 interface ItemListProps {
   title: string;
   items: any[];
+  itemsArray: {
+    image: string;
+    name: string;
+    duration?: string;
+    artist?: string;
+    audio?: string;
+    id: number;
+    banner?: string;
+  }[];
 }
 
-const ItemList: React.FC<ItemListProps> = ({ title, items }) => {
+const ItemList: React.FC<ItemListProps> = ({ title, items, itemsArray }) => {
   return (
     <>
       <div className="flex flex-col gap-2.5 p-0">
@@ -16,28 +25,11 @@ const ItemList: React.FC<ItemListProps> = ({ title, items }) => {
           </a>
         </div>
         <div className="grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-9">
-          {items.length === 5 ? (
-            <>
-              <SingleItem />
-              <SingleItem />
-              <SingleItem />
-              <SingleItem />
-              <SingleItem />
-            </>
-          ) : (
-            <>
-              <SingleItem />
-              <SingleItem />
-              <SingleItem />
-              <SingleItem />
-              <SingleItem />
-              <SingleItem />
-              <SingleItem />
-              <SingleItem />
-              <SingleItem />
-              <SingleItem />
-            </>
-          )}
+          {itemsArray
+            .filter((currentValue, index) => index < items.length)
+            .map((currentIObject, index) => (
+              <SingleItem {...currentIObject} key={`${title}-${index}`} />
+            ))}
         </div>
       </div>
     </>

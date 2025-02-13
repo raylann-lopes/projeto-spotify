@@ -1,7 +1,18 @@
 import { faCirclePlay } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "../index.css";
 
-const SingleItem = () => {
+interface SingleItemProps {
+  image: string;
+  name: string;
+  duration?: string;
+  artist?: string;
+  audio?: string;
+  id: number;
+  banner?: string;
+}
+
+const SingleItem = ({ id, name, image, banner }: SingleItemProps) => {
   return (
     <>
       <div className="py-6 px-4 flex flex-col items-center gap-2.5 rounded-2xl transform transition duration-200 ease-in-out hover:bg-green-900 hover:no-underline ">
@@ -9,8 +20,8 @@ const SingleItem = () => {
           <div className="flex w-40 h-40 overflow-hidden items-center justify-center rounded-full ">
             <img
               className="w-full h-auto block"
-              src="https://i.scdn.co/image/ab676161000051744dcd8a3bff84cd7703892cf4"
-              alt=""
+              src={image}
+              alt="{`Imagem do Artista ${name}`}"
             />
           </div>
           <FontAwesomeIcon
@@ -20,7 +31,7 @@ const SingleItem = () => {
         </div>
         <div className="flex flex-col gap-0">
           <div className="second-line">
-            <p className="font-semibold">Henrique e Juliano</p>
+            <p className="font-semibold">{name}</p>
             <p className="text-sm">Artista</p>
           </div>
         </div>
