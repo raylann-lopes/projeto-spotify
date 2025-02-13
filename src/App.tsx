@@ -1,14 +1,23 @@
 import "tailwindcss";
 import Header from "./components/Header.tsx";
-import Main from "./components/Main.tsx";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./assets/pages/Home.tsx";
+import Artist from "./assets/pages/Artist.tsx";
+import Artists from "./assets/pages/Artists.tsx";
+import Songs from "./assets/pages/Songs.tsx";
+import Song from "./assets/pages/Song.tsx";
 
 const App = () => {
   return (
     <BrowserRouter>
+      <Header />
+
       <Routes>
-        <Header />
-        <Main />
+        <Route path="/" element={<Home />} />
+        <Route path="/artists" element={<Artists />} />
+        <Route path="/artist/:id" element={<Artist />} />
+        <Route path="/songs" element={<Songs />} />
+        <Route path="/song/:id" element={<Song />} />
       </Routes>
     </BrowserRouter>
   );
