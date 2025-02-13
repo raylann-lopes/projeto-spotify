@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import SingleItem from "./SingleItem";
 interface ItemListProps {
   title: string;
@@ -27,9 +28,9 @@ const ItemList: React.FC<ItemListProps> = ({
       <div className="flex flex-col gap-2.5 p-0">
         <div className="flex items-center justify-between leading-normal">
           <h2 className="text-2xl">{title} Populares</h2>
-          <a href={itemsMore} className="hover:underline">
+          <Link to={itemsMore} className="hover:underline">
             Mostrar tudo
-          </a>
+          </Link>
         </div>
         <div className="grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-9">
           {itemsArray

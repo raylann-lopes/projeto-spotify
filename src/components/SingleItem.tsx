@@ -1,5 +1,6 @@
 import { faCirclePlay } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 interface SingleItemProps {
   image: string;
   name: string;
@@ -21,8 +22,8 @@ const SingleItem = ({
 }: SingleItemProps) => {
   return (
     <>
-      <a
-        href={`${idItemsMore}/${id}`}
+      <Link
+        to={`${idItemsMore}/${id}`}
         className="py-6 px-4 flex flex-col items-center gap-2.5 rounded-2xl transform transition duration-200 ease-in-out hover:bg-green-900 hover:no-underline "
       >
         <div className="relative">
@@ -53,7 +54,7 @@ const SingleItem = ({
             <p className="text-sm">{artist ?? "Artista"}</p>
           </div>
         </div>
-      </a>
+      </Link>
     </>
   );
 };
