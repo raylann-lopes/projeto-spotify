@@ -11,6 +11,8 @@ const Main = () => {
           title="Artistas"
           items={Array(5).fill(null)}
           itemsArray={artistArray}
+          itemsMore="/artists"
+          idItemsMore="/artist"
         />
 
         {/* Music List */}
@@ -18,6 +20,8 @@ const Main = () => {
           title="Musicas"
           items={Array(10).fill(null)}
           itemsArray={songsArray}
+          itemsMore="/songs"
+          idItemsMore="/song"
         />
       </div>
     </>

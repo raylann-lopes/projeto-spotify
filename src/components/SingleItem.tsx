@@ -1,7 +1,5 @@
 import { faCirclePlay } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "../index.css";
-
 interface SingleItemProps {
   image: string;
   name: string;
@@ -10,12 +8,23 @@ interface SingleItemProps {
   audio?: string;
   id: number;
   banner?: string;
+  idItemsMore: string;
 }
 
-const SingleItem = ({ id, name, image, banner }: SingleItemProps) => {
+const SingleItem = ({
+  id,
+  name,
+  image,
+  banner,
+  artist,
+  idItemsMore,
+}: SingleItemProps) => {
   return (
     <>
-      <div className="py-6 px-4 flex flex-col items-center gap-2.5 rounded-2xl transform transition duration-200 ease-in-out hover:bg-green-900 hover:no-underline ">
+      <a
+        href={`${idItemsMore}/${id}`}
+        className="py-6 px-4 flex flex-col items-center gap-2.5 rounded-2xl transform transition duration-200 ease-in-out hover:bg-green-900 hover:no-underline "
+      >
         <div className="relative">
           <div className="flex w-40 h-40 overflow-hidden items-center justify-center rounded-full ">
             <img
@@ -30,12 +39,21 @@ const SingleItem = ({ id, name, image, banner }: SingleItemProps) => {
           />
         </div>
         <div className="flex flex-col gap-0">
-          <div className="second-line">
+          <div
+            style={{
+              display: "-webkit-box",
+              WebkitLineClamp: 2,
+              lineClamp: 2,
+              WebkitBoxOrient: "vertical",
+              boxOrient: "vertical",
+              overflow: "hidden",
+            }}
+          >
             <p className="font-semibold">{name}</p>
-            <p className="text-sm">Artista</p>
+            <p className="text-sm">{artist ?? "Artista"}</p>
           </div>
         </div>
-      </div>
+      </a>
     </>
   );
 };
