@@ -1,6 +1,5 @@
-import { faCirclePlay } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
+import PlayButton from "./PlayButton";
 interface SingleItemProps {
   image: string;
   name: string;
@@ -34,10 +33,9 @@ const SingleItem = ({
               alt="{`Imagem do Artista ${name}`}"
             />
           </div>
-          <FontAwesomeIcon
-            className="absolute right-2 bottom-2 text-green-400 opacity-0 hover:opacity-100 text-5xl transform translate-y-full hover:translate-y-0 ease duration-200"
-            icon={faCirclePlay}
-          />
+          <div className="absolute right-2 bottom-2 text-green-400 opacity-0 hover:opacity-100 text-5xl transform translate-y-full hover:translate-y-0 ease duration-200">
+            <PlayButton />
+          </div>
         </div>
         <div className="flex flex-col gap-0">
           <div
