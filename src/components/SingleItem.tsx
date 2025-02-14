@@ -9,7 +9,7 @@ interface SingleItemProps {
   audio?: string;
   id: number;
   banner?: string;
-  idItemsMore: string;
+  idPath: string;
 }
 
 const SingleItem = ({
@@ -18,12 +18,12 @@ const SingleItem = ({
   image,
   banner,
   artist,
-  idItemsMore,
+  idPath,
 }: SingleItemProps) => {
   return (
     <>
       <Link
-        to={`${idItemsMore}/${id}`}
+        to={`${idPath}/${id}`}
         className="py-6 px-4 flex flex-col items-center gap-2.5 rounded-2xl transform transition duration-200 ease-in-out hover:bg-green-900 hover:no-underline "
       >
         <div className="relative">
