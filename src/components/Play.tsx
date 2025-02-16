@@ -6,16 +6,22 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
-interface PlayProps {
+type PlayProps = {
   duration: string;
-}
+  randomIdFromArtist: number;
+  randomId2FromArtist: number;
+};
 
-const Play: React.FC<PlayProps> = ({ duration }) => {
+const Play: React.FC<PlayProps> = ({
+  duration,
+  randomIdFromArtist,
+  randomId2FromArtist,
+}) => {
   return (
     <>
       <div className=" justify-self-stretch flex flex-col items-center gap-1">
         <div className="flex text-2xl items-center gap-5">
-          <Link to={"/song/2"}>
+          <Link to={`/song/${randomIdFromArtist}`}>
             <FontAwesomeIcon
               className="cursor-pointer transition-transform ease duration-200 hover:scale-110 hover:text-green-500"
               icon={faBackwardStep}
@@ -25,7 +31,7 @@ const Play: React.FC<PlayProps> = ({ duration }) => {
             className="cursor-pointer transition-transform ease duration-200 hover:scale-120 text-4xl hover:text-green-500"
             icon={faCirclePlay}
           />
-          <Link to={"/song/3"}>
+          <Link to={`/song/${randomId2FromArtist}`}>
             <FontAwesomeIcon
               className="cursor-pointer transition-transform ease duration-200 hover:scale-110 hover:text-green-500"
               icon={faForwardStep}
