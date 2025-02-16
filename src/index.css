@@ -24,11 +24,14 @@
   --border-radius-l: 15px;
 
   --_shade: #00000040;
+  --_shadow: 0 0 25px 10px var(--green-1000-25);
+  --_progress: 0;
 }
 
 body {
   background-color: black;
   font-family: "Montserrat", sans-serif;
+  color: white;
 }
 .second-line {
   display: -webkit-box;
