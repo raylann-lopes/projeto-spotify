@@ -1,27 +1,43 @@
 import { Link } from "react-router-dom";
 
-const SongItem = () => {
+interface SongItemProps {
+  image: string;
+  name: string;
+  artist: string;
+  id: string;
+  duration: string;
+  audio: string;
+  index: number;
+}
+
+const SongItem: React.FC<SongItemProps> = ({
+  image,
+  name,
+  artist,
+  id,
+  duration,
+  audio,
+  index,
+}) => {
   return (
     <Link
-      to="/song/1"
+      to={`/song/${id}`}
       className="flex justify-between items-center py-2.5 px-6 rounded-l gap-4 transition-color ease duration-200 hover:bg-green-800 no-underline"
     >
       <div className="flex gap-6 items-center">
-        <p>1</p>
+        <p>{index + 1}</p>
         <div className="flex gap-3 items-center">
           <img
-            src="https://i.scdn.co/image/ab67616d00001e022774b00531d558bc19e12a24"
-            alt="Imagem da música"
+            src={image}
+            alt={`Imagem da música${name}`}
             className="w-10 h-10 rounded-sm"
           />
 
-          <p className="hover:no-underline">
-            A ultima saudade - Henrique e Juliano
-          </p>
+          <p className=" hover:underline">{name}</p>
         </div>
       </div>
 
-      <p>02:30</p>
+      <p>{duration}</p>
     </Link>
   );
 };

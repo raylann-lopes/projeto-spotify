@@ -11,14 +11,7 @@ interface SingleItemProps {
   idPath: string;
 }
 
-const SingleItem = ({
-  id,
-  name,
-  image,
-  banner,
-  artist,
-  idPath,
-}: SingleItemProps) => {
+const SingleItem = ({ id, name, image, artist, idPath }: SingleItemProps) => {
   return (
     <>
       <Link
